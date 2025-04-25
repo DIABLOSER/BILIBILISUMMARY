@@ -1,0 +1,8 @@
+# 在环境变量配置部分增加日志验证
+if __name__ == '__main__':
+    # 验证环境变量是否配置
+    bibigpt_api_key = os.getenv('BIBIGPT_API_KEY')
+    if not bibigpt_api_key:
+        logging.warning("警告：BIBIGPT_API_KEY环境变量未配置！")
+    
+    app.run(host='0.0.0.0', port=3000, debug=True)
